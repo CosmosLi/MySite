@@ -1,0 +1,106 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            display: grid;
+            grid-template-areas: 
+                "header header"
+                "nav nav"
+                "sidebar content"
+                "footer footer";
+            grid-template-rows: auto auto 1fr auto;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+
+        header {
+            grid-area: header;
+            background-color: #502c4e;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: #5e345b;
+            padding: 0.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #4d2c50;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #ecf0f1;
+            padding: 1rem;
+            border-right: 1px solid #bdc3c7;
+        }
+
+        .content {
+            grid-area: content;
+            padding: 2rem;
+            background-color: #ffffff;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #482c50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .article {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid #ecf0f1;
+            border-radius: 5px;
+        }
+
+        .sidebar-widget {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                grid-template-areas: 
+                    "header"
+                    "nav"
+                    "content"
+                    "sidebar"
+                    "footer";
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+        }
